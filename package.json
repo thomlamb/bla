@@ -27,4 +27,3 @@
     "copy:assets": "cp -ru assets/svg theme/smartweb"
   }
 }
-

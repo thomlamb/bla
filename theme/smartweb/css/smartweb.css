@@ -11856,10 +11856,6 @@ article > header {
   }
 }
 
-body {
-  background: red !important;
-}
-
 header#content-header {
   position: relative;
   z-index: 2;
