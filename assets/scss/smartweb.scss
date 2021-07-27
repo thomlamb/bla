@@ -3,11 +3,6 @@ $primary: #008FD2;
 $bg-primary: red;
 @import "../../../plonetheme.barceloneta/scss/barceloneta.scss";
 @import "./sm-sitenav.scss";
-
-
-body{
-    background: red!important;
-}
 // custom
 header#content-header{
     position: relative;
@@ -70,7 +65,6 @@ header#content-header{
 }
 @media screen and (max-width:992px) {
     #portal-globalnav-collapse{
-        
     }
     .navbar-toggler{
         z-index: 99;
