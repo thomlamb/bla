@@ -1,0 +1,196 @@
+//*// SITE NAV //*//
+#portal-globalnav-wrapper {
+  position: initial!important;
+  .nav-link {
+    color: black;
+  }
+    &.navbar {
+      padding: 0;
+    }
+    .navbar-toggler {
+      border-color: $navbar-dark-toggler-border-color;
+      margin: $navbar-padding-y 0;
+    }
+  
+    .navbar-nav {
+      flex-wrap: wrap;
+      li {
+        display: block;
+        &.inPath>a,
+        &.current>a,
+        &.selected>a {
+          &,
+          &:hover,
+          &:focus {
+            color: black;
+            // background-color: $link-hover-color;
+          }
+        }
+  
+        // @include media-breakpoint-up($nav-main-breakpoint) {
+          // &.has_subtree:hover>ul,
+          // &.has_subtree .has_subtree:hover>ul {
+          //   opacity: 1;
+          //   visibility: visible;
+          //   transition: ease-in .35s;
+          // }
+          .dropdown{
+            visibility: hidden;
+            opacity: 0;
+          }
+          &.show-nav > .has_subtree.dropdown{
+            visibility: visible;
+            opacity: 1;
+          }
+          &.show-nav > .has_subtree{
+            visibility: visible;
+            .show-nav > .dropdown{
+              left: 24em;
+            }
+          }
+          &.has_subtree .has_subtree ul {
+            z-index: -1;
+            left: 0em;
+            top: 0px;
+          }
+  
+          &.has_subtree .has_subtree>ul {
+            // we only shift the submenus to the right if visible
+            // to prevent horizontal scrollers if not needed
+            // left: 24em;
+          }
+  
+        // }
+  
+        & .dropdown a {
+          padding: 1rem 0;
+          border-bottom: 1px solid #DDDDDD;
+          
+        }
+  
+        label {
+          margin: 0;
+        }
+  
+        a {
+          position: relative;
+          display: block;
+          padding: $navbar-nav-link-padding-x;
+          hyphens: auto;
+          word-break: break-word;
+          text-decoration: none;
+  
+          &:hover,
+          &:focus {
+            text-decoration: none;
+            background-color: transparent;
+          }
+  
+        }
+  
+        // Navigation sublevels
+        ul {
+          @include media-breakpoint-up($nav-main-breakpoint) {
+            padding: 3.7em;
+            background: #fff;
+            width: 23em;
+          }
+  
+        //   padding-left: 0.5em;
+        //   visibility: hidden;
+        //   opacity: 0;
+        //   height: 0;
+  
+          @include media-breakpoint-up($nav-main-breakpoint) {
+            position: absolute;
+            // z-index: $zindex-dropdown;
+            transition: ease-out 2.75s;
+            left: 0;
+          }
+  
+          li {
+            a {
+              @include media-breakpoint-up($nav-main-breakpoint) {
+                // min-width: 16em;
+              }
+            }
+  
+          }
+        }
+  
+        .opener {
+          display: none;
+  
+          &+label:after {
+            transform: rotate(0deg);
+            transition: ease-in 0.35s;
+          }
+  
+          &:checked+label:after {
+            transform: rotate(-180deg);
+            transition: ease-in 0.35s;
+  
+            @include media-breakpoint-up($nav-main-breakpoint) {
+              transform: rotate(0);
+            }
+          }
+  
+          &~ul {
+            // transition: ease-out 0.35s;
+            transition: opacity .35s ease,visibility 0s linear 0s;
+
+          }
+  
+          &:checked~ul {
+            height: auto;
+            transition: ease-in 0.35s;
+          }
+  
+          &:checked~ul {
+            @include media-breakpoint-down($nav-main-breakpoint) {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+  
+        label {
+          position: absolute;
+          right: 0em;
+          top: 0em;
+          height: 3em;
+          width: 4em;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-end;
+          padding-right: 0.5em;
+  
+          @include media-breakpoint-up($nav-main-breakpoint) {
+            align-items: flex-start;
+            width: auto;
+          }
+  
+          &:after {
+            // background: darken($link-color, 7%);
+            // color: $navbar-dark-color;
+            // border-radius: $input-border-radius;
+            // content: "▼";
+            // cursor: pointer;
+            // display: inline-block;
+            // line-height: 1;
+            // font-size: 1.25em;
+            // padding: 0.25em;
+  
+            @include media-breakpoint-up($nav-main-breakpoint) {
+              font-size: 0.75em;
+              background: transparent;
+            }
+          }
+        }
+  
+      }
+    }
+  
+  }
