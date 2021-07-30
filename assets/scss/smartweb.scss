@@ -1,9 +1,10 @@
 $headings-color: #000;
 $primary: #008FD2;
 $bg-primary: red;
+@import "./sm-variables.scss";
 @import "../../../plonetheme.barceloneta/scss/barceloneta.scss";
+@import "./sm-list.scss";
 @import "./sm-sitenav.scss";
-@import "./sm-manu.scss";
 // custom
 header#content-header{
     position: relative;
@@ -56,6 +57,19 @@ header#content-header{
                     }
                 }
             }
+        }
+    }
+    .quick-access{
+        .quick-access-title{
+            font-weight: bold;
+            margin-top: 2em;
+            display: block;
+            color: $primary;     
+        }
+        ul{
+            position: relative!important;
+            padding: 0!important;
+            width: auto!important;
         }
     }
 }
