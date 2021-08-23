@@ -5,6 +5,8 @@ $bg-primary: red;
 @import "../../../plonetheme.barceloneta/scss/barceloneta.scss";
 @import "./sm-list.scss";
 @import "./sm-sitenav.scss";
+@import "./sm-list-block.scss";
+@import "./sm-list-block-img.scss";
 // custom
 header#content-header{
     position: relative;
@@ -33,8 +35,10 @@ header#content-header{
 }
 
 #portal-globalnav-collapse{
-    .has_subtree{
-        border-radius: 10px;
+    div.has_subtree {
+        ul{
+            border-radius: 10px;
+        }
     }
     .dropdown{
         .nav-link{
