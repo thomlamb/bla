@@ -3,113 +3,24 @@ $primary: #008FD2;
 $bg-primary: red;
 @import "./sm-variables.scss";
 @import "../../../plonetheme.barceloneta/scss/barceloneta.scss";
+// @import "../../../plonetheme.common/scss/base.scss";
 @import "./sm-list.scss";
 @import "./sm-sitenav.scss";
 @import "./sm-list-block.scss";
 @import "./sm-list-block-img.scss";
-// custom
-header#content-header{
-    position: relative;
-    z-index: 2;
-}
-.mask-menu{
-    opacity: 0;
-    z-index: 1;
-    visibility: hidden;
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transition: opacity .25s,visibility 0s linear .25s;
-    background-color: hsla(0,0%,7%,.76);
-}
-.activated > ul > li > a {
-	color: #fff !important;
-}
-.mask-menu.in {
-	opacity: 1;
-	visibility: visible;
-	transition: opacity .8s ease,visibility 0s;
-}
 
-#portal-globalnav-collapse{
-    div.has_subtree {
-        ul{
-            border-radius: 10px;
-        }
-    }
-    .dropdown{
-        .nav-link{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            &:hover,
-            &:focus{
-                color: $primary;
-            }
-            &[aria-haspopup="true"]{
-                &:after{
-                    content: url(../svg/arrow-right-blue.svg);
-                    content: url(../svg/arrow-right.svg);
-                }
-                &:hover,
-                &:focus{
-                    &:after{
-                        content: url(../svg/arrow-right-blue.svg);
-                    }
-                }
-            }
-        }
-    }
-    .quick-access{
-        .quick-access-title{
-            font-weight: bold;
-            margin-top: 2em;
-            display: block;
-            color: $primary;     
-        }
-        ul{
-            position: relative!important;
-            padding: 0!important;
-            width: auto!important;
-        }
-    }
-}
-
-    // nav-mobile
-.navbar-toggler{
-    background-color: $primary;
-}
-@media screen and (max-width:992px) {
-    #portal-globalnav-collapse{
-    }
-    .navbar-toggler{
-        z-index: 99;
-    }
-    #portal-globalnav-collapse{
-        position: fixed;
-        height: 100vh;
-        top: 0;
-        width: 100vw;
-        background: #fff;
-        z-index: 98;
-        left: -100vw;
-        padding: 9em 1em;
-        &.show{
-            left: 0;
-        }
-    }
-}
-
-//
 
 // à voir dans html
 .bg-primary {
 	background-color:transparent !important;
 }
-//
+ 
+
+// GLOBAL 
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+  }
 
 //// Notes
 

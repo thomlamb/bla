@@ -1,3 +1,4 @@
+
 .list-group{
     .list-group-item{
         border-bottom: $border-width solid $gray;
@@ -11,7 +12,7 @@
                 left: 0;
                 right: 0;
                 position: absolute;
-                z-index: 99;
+                z-index: 1;
             }
             &:hover,
             &:focus {
