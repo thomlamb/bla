@@ -1,0 +1,17 @@
+//*// BREADCRUMBS //*//
+
+#plone-breadcrumb {
+    background-color: $breadcrumb-bg;
+    margin-bottom: 2rem;
+    position: relative;
+    @if $enable-full-width-breacrumb {
+        &:after{
+          @include full-width;
+          background: $breadcrumb-bg;
+        }
+      }
+    .breadcrumb {
+      background-color: transparent;
+    }
+  
+  }

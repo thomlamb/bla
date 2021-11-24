@@ -1,0 +1,37 @@
+#portal-header{
+    display: grid;
+    align-items: center;
+    grid-template-columns: $main-logo-max-width 1fr 1fr;
+    grid-template-areas: "logo menu search"  "sub sub sub" "bread bread bread";
+    margin: 0 auto;
+    @media screen and (min-width:1000px) {
+      grid-template-columns: $main-logo-max-width auto auto;
+    }
+    #portal-logo{
+      grid-area: logo;
+      max-width: $main-logo-max-width;
+      margin: $logo-margin-y 0;
+      img{
+        max-width: 100%;
+      }
+    }
+    #portal-searchbox{
+      justify-self: end;
+      grid-area: search;
+    }
+    #portal-globalnav-wrapper{
+      grid-area: menu;
+    }
+    #plone-breadcrumb{
+      grid-area: bread;
+    }
+    .subsite-container{
+      grid-area: sub;
+      overflow-x: clip;
+    }
+      @include media-breakpoint-up($nav-main-breakpoint) {
+        position: relative;
+        @include make-row(0rem);
+        margin: 0 auto;
+      }
+  }

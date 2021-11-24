@@ -32,6 +32,9 @@ $nav-subtree-title-color : #008FD2;
 }
 
 #portal-globalnav-collapse, #subsite-navigation{
+    .index_html {
+        display: none;
+    }
     div.has_subtree {
         border-radius: 10px;
         & > span {
@@ -93,11 +96,14 @@ $nav-subtree-title-color : #008FD2;
     }
     & > ul {
         @media screen and (min-width:992px){
-            gap: 30px;
+            gap: $nav-first-level-gap;
         }
         & > li{
-            a{
+            & > a{
                 padding: 0;
+                @if($nav-first-level-uppercase){
+                    text-transform: uppercase;
+                }
                 &:before{
                     content: "";       
                     height: 2px;
@@ -128,8 +134,15 @@ $nav-subtree-title-color : #008FD2;
 .navbar-toggler:focus{
     box-shadow: none!important;
 }
-
+@media screen and (min-width:768px){
+    .navbar-expand-md .navbar-toggler {
+        display: block;
+    }
+}
 @media screen and (min-width:992px){
+    .navbar-expand-md .navbar-toggler {
+        display: none;
+    }
     .has_subtree.dropdown{
         height: 800px;
         max-height: 85vh;
