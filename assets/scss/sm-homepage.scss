@@ -1,0 +1,393 @@
+//VARIABLES
+$black: #000;
+$grey: #9D9D9D;
+$blue: #008FD2;
+$border_grey: #d3d3d3;
+//SECTION EN UN CLIC
+/* FOND GRIS */
+#content .sortable-section.sectionlinks.un-clic::after{
+    left: 0 !important;
+    background: #f3f3f3;
+    content: "";
+    width: 100vw !important;
+    z-index: -2;
+}
+/* TITRE */
+
+.sectiontext.en-un-clic-titre .body-section.figure-left.no-image .text {
+    max-width: 50%;
+    margin: 0 auto auto 0;
+    h2 {
+    text-transform: uppercase;
+    color: $black;
+    font-size: 3rem;
+    }
+    p {
+        color: $grey;
+        font-size: 1rem;
+    }
+}
+/* LIENS */
+.sectionlinks.un-clic a:hover .image.d-block.w-100 {
+    transform: scale(1.1);
+}
+.sectionlinks.un-clic .image.d-block.w-100 {
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    width: 70px !important;
+    height: 70px;
+    background: 0 0;
+    background-image: none;
+    box-shadow: 0 3px 6px #00000029;
+    border-radius: 15px;
+    background-size: 40% !important;
+    background: no-repeat #fff;
+    align-content: center;
+    background-position: center;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    svg{
+        width: 30px;
+        height: 30px;
+    }
+}
+.sortable-section.sectionlinks.un-clic {
+    background-color: initial;
+        .row>* { 
+
+    }
+}
+
+.sortable-section.sectionlinks.un-clic .section_links_item {
+    span.section_links_item_title {
+        text-align: center;
+        padding-top: 5.5em;
+        color: $blue;
+        font-size: 14px;
+        font-weight: bold;
+        width: 100%;
+    }
+}
+
+#body-section-en-un-clic{
+    li{
+        flex: 0 0 auto;
+        width: 25%!important;
+        text-align: center;
+        margin: 1rem 0;
+        & > div > a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+/* LES SITES DE LA VILLE */
+
+.sectionlinks.sites-de-la-ville {
+    span.section_links_item_title {
+    color: $black !important;
+    }
+}
+
+.sites-de-la-ville {
+    h2.section-title {
+    text-transform: uppercase;
+    color: $black;
+    font-size: 3rem;
+    }
+}
+.sectionlinks.sites-de-la-ville{
+    .section-container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 3rem 0;
+        .section-title{
+            width: 27%;
+        }
+        .header-section{
+            order: -1;
+            width: 100%;
+            flex: 1 0 100%;
+        }
+        #body-section-les-sites-de-la-ville{
+            width: 73%;
+        }
+    }
+}
+#body-section-les-sites-de-la-ville{
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+        grid-gap: 15px;
+        grid-auto-rows: 1fr;
+        & > *:first-child {
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+          }
+        &::before{
+            content: '';
+            width: 0;
+            padding-bottom: 100%;
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+        }
+        li{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            background: #fff;
+            border-radius: 15px;
+            .table_display{
+                text-align: center;
+                svg{
+                    width: 40px;
+                    height: 40px;
+                    margin-bottom: 1rem;
+                }
+                .table_title{
+                    text-align: center;
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-style: normal;
+                }
+            }
+        }
+    }
+}
+
+.en-un-clic-titre{
+    position: relative;
+    svg{
+        position: absolute;
+        top: 0;
+        fill: #fff;
+        z-index: -1;
+        right: -30px;
+        transform: translateY(-26%);
+        width: 122%;
+    }
+}
+
+/* MON BLA */
+.mon-bla-liens {
+    background: transparent;
+    &:after {
+    display: none;
+    }
+    h2 {
+        text-transform: uppercase;
+        color: $black;
+        font-size: 3rem;
+    }
+    p {
+        color: $grey;
+        font-size: 1rem;
+    }
+}
+#body-section-mon-bla{
+    ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+        grid-gap: 15px;
+        grid-auto-rows: 1fr;
+        & > *:first-child {
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+          }
+        &::before{
+            content: '';
+            width: 0;
+            padding-bottom: 50%;
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+        }
+        li{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            background: #fff;
+            border-radius: 15px;
+            border: $border_grey solid 1px;
+
+            a {
+                flex-direction: row;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                .image.d-block.w-100 {
+                    width: 50% !important;
+                }
+            }
+            .table_display{
+                svg{
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                }
+                .table_title{
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-style: normal;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+#body-section-section-monbla-images .section-monbla-img-container {
+    position: relative;
+    img.section-monbla-logo {
+        position: absolute;
+        left: 19%;
+    }
+    img.section-monbla-image2 {
+        margin-right: 0;
+        display: block;
+        text-align: right;
+        margin-left: auto;
+    }
+    img.section-monbla-image1 {
+        position: absolute;
+        bottom: 0;
+        left: 7%;
+    }
+
+}
+
+
+/* SECTION ANNUAIRE */
+
+.section-annuaire{
+    margin: 0 auto auto 0;
+    background: initial !important;
+    h2 {
+    text-transform: uppercase;
+    color: $black;
+    font-size: 3rem;
+    }
+    &::after{
+        content: none;
+    }
+}
+#body-section-annuaire ul {
+    &::before {
+        content: "";
+        width: 0;
+        padding-bottom: 100%;
+        grid-row: 1/1;
+        grid-column: 1/1;
+    }
+    & > *:first-child {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+      }
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(136px,1fr));
+    grid-gap: 20px 15px;
+    grid-auto-rows: 1fr;   
+        li {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        background: #fff;
+        border: solid 1px $border_grey;
+        border-radius: 15px;
+        &:last-child {
+            border: initial;
+        }
+        .table_display {
+            text-align: center;
+                .table_title {
+                    text-align: center;
+                    font-weight: 700;
+                    text-decoration: none;
+                    font-style: normal;
+                }
+                svg {
+                    width: 40px;
+                    height: 40px;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+}
+.sectiontext .section-text .body-section#body-section-plan-annuaire figure {
+    width: 100%;
+    max-width: 100%;
+    float: initial;
+        img {
+        width: 60%;
+        margin: 0 auto;
+        }
+}
+
+
+/* SECTION RESEAUX SOCIAUX */
+.sectionlinks.liens-rs {
+    margin: 0 auto auto 0;
+    background: initial !important;
+    h2 {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 3rem;
+    }
+    ul li a div svg {
+        height: 2.5em;
+        width: auto;
+        path {
+            //fill: #fff;
+        }
+    }
+    &:after {
+    background: $blue;
+    content: "";
+    width: 100vw !important;
+    }
+    ul li a span.section_links_item_title {
+        display: none;
+        }
+}
+.sectionlinks.liens-rs .container.section-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    color: #fff;
+}
+.sortable-section.sectiontext.newsletter-bla {
+    position: relative;
+    &:after {
+        background: $blue;
+        content: "";
+        width: 100vw !important;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50vw);
+        z-index: -1;
+        }
+    .text {
+        p {
+        color: #fff;
+        text-align: center;
+        }
+        h2 {
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 3rem;
+        }
+    }
+}
