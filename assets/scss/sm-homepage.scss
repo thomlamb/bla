@@ -391,3 +391,196 @@ $border_grey: #d3d3d3;
         }
     }
 }
+/* MON BLA */
+.mon-bla-liens {
+    background: transparent;
+    &:after {
+    display: none;
+    }
+    h2 {
+        text-transform: uppercase;
+        color: $black;
+        font-size: 3rem;
+    }
+    p {
+        color: $grey;
+        font-size: 1rem;
+    }
+}
+#body-section-mon-bla{
+    ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+        grid-gap: 15px;
+        grid-auto-rows: 1fr;
+        & > *:first-child {
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+          }
+        &::before{
+            content: '';
+            width: 0;
+            padding-bottom: 50%;
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+        }
+        li{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            background: #fff;
+            border-radius: 15px;
+            border: $border_grey solid 1px;
+
+            a {
+                flex-direction: row;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                .image.d-block.w-100 {
+                    width: 50% !important;
+                }
+            }
+            .section_links_item{
+                svg{
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                }
+                span.section_links_item_title{
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-style: normal;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+.section-mon-bla {
+    padding-top: 2.3rem;
+}
+#body-section-section-monbla-images .section-monbla-img-container {
+    position: relative;
+    img.section-monbla-logo {
+        position: absolute;
+        left: 19%;
+    }
+    img.section-monbla-image2 {
+        margin-right: 0;
+        display: block;
+        text-align: right;
+        margin-left: auto;
+    }
+    img.section-monbla-image1 {
+        position: absolute;
+        bottom: 0;
+        left: 7%;
+    }
+
+}
+
+/* A LA UNE */
+.a-la-une .swiper-slide {
+    padding-bottom: 3rem;
+    position: relative;
+        .d-none.d-md-block {
+        width: 40%;
+        padding: 2.5rem 3rem 2.5rem 3rem;
+        background: #ffffff;
+        height: auto;
+        opacity: 1;
+        position: absolute;
+        right: 0;
+        top: 15%;
+        bottom: 0;
+        border-radius: 0px 0px 0px 0px;
+        box-shadow: 3px 4px 15px rgba(0,0,0,0.15);
+            h5 {
+                color: $blue;
+                font-size: 1.8rem;
+                padding: 1rem;
+            }
+        }
+}
+.a-la-une .swiper-slide .swiper-image {
+    padding-bottom: 35%;
+    max-width: 65%;
+    border-radius: 0px 30px 0px 0px;
+}
+.a-la-une .swiper-button-prev, .swiper-button-next {
+    display: none;
+}
+
+/* MEDIA QUERIES */
+
+//MON BLA
+@include media-breakpoint-down(xl) {
+    #body-section-section-monbla-images .section-monbla-img-container img.section-monbla-image2 {
+    width: 100%;
+    }
+    .section-mon-bla, .mon-bla-liens {
+        width: 50%;
+    }
+    #body-section-mon-bla ul {
+        grid-template-columns: repeat(auto-fill,minmax(165px,1fr));
+    }
+    #body-section-section-monbla-images .section-monbla-img-container img.section-monbla-logo {
+        position: absolute;
+        left: 10%;
+        width: 20%;
+    }
+    #body-section-section-monbla-images .section-monbla-img-container img.section-monbla-image1 {
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        width: 40%;
+    }
+}
+@include media-breakpoint-down(lg) {
+    //MON BLA
+    .section-mon-bla, .mon-bla-liens {
+        width: 100%;
+    }
+    .section-mon-bla {
+        padding-top: 0;
+    }
+   
+}
+@include media-breakpoint-down(md) {
+    //A LA UNE
+    .a-la-une {
+        padding-right: 0;
+        padding-left: 0;
+            .container {
+            max-width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+                .swiper-slide .swiper-image {
+                    padding-bottom: 60%;
+                    max-width: 100%;
+                    border-radius: 0 0 0 0;
+                }
+                .d-none.d-md-block {
+                    display: block !important;
+                    width: 100%;
+                    padding: initial;
+                    background: #ffffff;
+                    height: auto;
+                    position: initial;
+                    right: initial;
+                    top: initial;
+                    bottom: initial;
+                    border-radius: 0px 0px 0px 0px;
+                    box-shadow: 0 0 0 0;
+                    h5 {
+                        text-decoration: none;
+                    }
+                }
+        }
+    }
+    //MON BLA
+    
+}
