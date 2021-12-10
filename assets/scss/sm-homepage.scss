@@ -391,7 +391,7 @@ $border_grey: #d3d3d3;
         }
     }
 }
-/* MON BLA */
+/* MON BLA  */
 .mon-bla-liens {
     background: transparent;
     &:after {
@@ -486,7 +486,7 @@ $border_grey: #d3d3d3;
 .a-la-une .swiper-slide {
     padding-bottom: 3rem;
     position: relative;
-        .d-none.d-md-block {
+        .swiper_title {
         width: 40%;
         padding: 2.5rem 3rem 2.5rem 3rem;
         background: #ffffff;
@@ -498,7 +498,7 @@ $border_grey: #d3d3d3;
         bottom: 0;
         border-radius: 0px 0px 0px 0px;
         box-shadow: 3px 4px 15px rgba(0,0,0,0.15);
-            h5 {
+            h3 {
                 color: $blue;
                 font-size: 1.8rem;
                 padding: 1rem;
@@ -563,7 +563,7 @@ $border_grey: #d3d3d3;
                     max-width: 100%;
                     border-radius: 0 0 0 0;
                 }
-                .d-none.d-md-block {
+                .swiper_title {
                     display: block !important;
                     width: 100%;
                     padding: initial;
@@ -575,7 +575,7 @@ $border_grey: #d3d3d3;
                     bottom: initial;
                     border-radius: 0px 0px 0px 0px;
                     box-shadow: 0 0 0 0;
-                    h5 {
+                    h3 {
                         text-decoration: none;
                     }
                 }
