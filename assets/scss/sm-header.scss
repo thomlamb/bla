@@ -1,16 +1,19 @@
 #portal-header{
     display: grid;
     align-items: center;
-    grid-template-columns: $main-logo-max-width 1fr 1fr;
-    grid-template-areas: "logo menu search" "messageviewlet messageviewlet messageviewlet"  "sub sub sub" "localmessageviewlet localmessageviewlet localmessageviewlet" "bread bread bread";
-    margin: 0 auto;
-    @media screen and (min-width:1000px) {
-      grid-template-columns: $main-logo-max-width auto auto;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    grid-template-areas: "search logo menu" "messageviewlet messageviewlet messageviewlet" "sub sub sub" "localmessageviewlet localmessageviewlet localmessageviewlet" "bread bread bread";    margin: 0 auto;
+    @media screen and (min-width:1200px) {
+      grid-template-columns: $main-logo-max-width 1fr $main-search-max-width!important;
+      grid-template-areas: "logo menu search" "messageviewlet messageviewlet messageviewlet"  "sub sub sub" "localmessageviewlet localmessageviewlet localmessageviewlet" "bread bread bread";
     }
     #portal-logo{
       grid-area: logo;
       max-width: $main-logo-max-width;
       margin: $logo-margin-y 0;
+      @media screen and (max-width:1200px) {
+        justify-self: center;
+      } 
       img{
         max-width: 100%;
       }
@@ -21,6 +24,12 @@
     }
     #portal-globalnav-wrapper{
       grid-area: menu;
+      @media screen and (max-width:1200px){
+        justify-self: right;
+        .container{
+          padding: 0;
+        }
+      }
     }
     #plone-breadcrumb{
       grid-area: bread;
@@ -31,6 +40,9 @@
     }
     #header-links{
       #header-actions{
+        @media screen and (max-width:1200px) {
+          display: none;
+        } 
         .account{
           text-decoration: none;
           text-decoration: none;

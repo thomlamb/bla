@@ -44,3 +44,23 @@
         }
     }
 }
+
+// align logo 
+
+.subsite-container #subsite-logo a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 1rem 2rem 1rem 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+div#subsite-logo img {
+    margin-right: 0.25em;
+    margin-left: -1.25rem;
+    height: 3rem;
+    margin-top: -0.5em;
+    margin-bottom: -0.5em;
+}

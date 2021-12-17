@@ -13,15 +13,15 @@
     h3{
         margin-top: $section-text-h3-margin-top;
         margin-bottom: $section-text-h3-margin-bottom;
+        font-weight: 500;
     }
 
     li{
         list-style: none;
-        display: flex;
-        flex-wrap: wrap;
+        display: table;
         padding-left: 1rem;
         position: relative;
-        margin: .75rem 0; 
+        margin: .25rem 0; 
         &::before{
             content: $list-style-custom;
             top: -2px;
@@ -112,7 +112,35 @@ div:not(.sectiontext){
     }
 }
 
+// quote
+blockquote {
+    margin: 0 0 1rem 2rem;
+    font-style: italic;
+     font-weight:600;
+}
+blockquote::before {
+    content: '"';
+    font-size: 32px;
+    line-height: 0;
+    height: 10px;
+    top: 9px;
+    position: relative;
+    margin-right: 0.25rem;
+    font-weight:600;
+}
+blockquote::after {
+    content: '"';
+    font-size: 32px;
+    line-height: 0;
+    height: 10px;
+    top: 8px;
+    position: relative;
+    font-weight: 600;
+}
 
+strong {
+    font-weight: bold;
+}
 
 // for bla
 

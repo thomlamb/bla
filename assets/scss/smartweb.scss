@@ -17,10 +17,12 @@ $bg-primary: red;
 @import "././sections/sm-se-file.scss";
 @import "././sections/sm-se-contact.scss";
 @import "./sm-header.scss";
+@import "./sm-footer.scss";
 @import "./sm-sitenav.scss";
 @import "./sm-breadcrumbs.scss";
 @import "./sm-list-block.scss";
 @import "./sm-list-block-img.scss";
+@import "./sm-list-img.scss";
 @import "./sm-subsite.scss";
 @import "./sm-carousel.scss";
 @import "./sm-homepage.scss";
@@ -72,20 +74,14 @@ html, body {
 }
 
 
-  /// A SUPP PUIS AJOUTER EDIT CSS
 
-  .pat-sortable > :hover {
-	cursor: move;
-	background: transparent!important;
-}
-.pat-sortable .sortable-section {
-	border: 1px solid transparent !important;
-}
-.pat-sortable .sortable-section:hover {
-	border: 1px dashed #c7c8c8 !important;
-}
 //// Notes
 
 // j'ai ajouté une div mask-menu dans le index.html du theme: bon ou pas ?
 
 // navbar-expand-md changer navbar-expand-lg
+
+
+
+
+

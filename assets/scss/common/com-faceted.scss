@@ -78,6 +78,10 @@ legend {
         font-weight: normal;
        }
        .widget-body{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
         dl{
             display: flex;
             gap: 10px;

@@ -11,6 +11,7 @@ $color-content-text:#505050;
 $image-raduis: 20px 20px 20px 0;
 // header
 $main-logo-max-width: 115px;
+$main-search-max-width: 187px;
 $logo-margin-y: 1.5rem;
 // nav
 $nav-link-font-size:                null !default;
@@ -51,12 +52,12 @@ $headings-font-weight: 700;
 $headings-color: #000;
 
 // breadcumbs
-$breadcrumb-bg: #F8F8F8;
+$breadcrumb-bg: transparent;
 $breadcrumb-margin-bottom: 0;
 $breadcrumb-padding-y: 1rem;
 $breadcrumb-padding-x: 0;
 $breadcrumb-font-size: $font-size-sm;
-$enable-full-width-breacrumb: true;
+$enable-full-width-breacrumb: false;
 
 
 // Section

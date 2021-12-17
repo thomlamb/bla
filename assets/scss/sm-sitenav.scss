@@ -80,9 +80,11 @@ $nav-subtree-title-color : #008FD2;
     .quick-access{
         .quick-access-title{
             font-weight: bold;
-            margin-top: 2em;
             display: block;
-            color: $primary;     
+            color: $primary;
+            margin-top: 1em;
+            font-size: 1.25rem;
+            padding-bottom: 0.5rem;
         }
         ul{
             position: relative!important;
@@ -124,7 +126,10 @@ $nav-subtree-title-color : #008FD2;
 }
 // Drop arrow for navlink
 .navbar{
-    padding-right: 1.5rem!important;
+    padding-right: 0!important;
+    @media screen and (min-width:1200px){
+        padding-right: 1.5rem!important;
+    }
 }
 #portal-globalnav{
     width: 100%;
@@ -147,7 +152,9 @@ $nav-subtree-title-color : #008FD2;
         }
     }
     .je-suis{
-        margin-left: auto;
+        @media screen and (min-width:1200px) {
+            margin-left: auto;
+        }
     }
   }
     // nav-mobile
@@ -286,6 +293,25 @@ $nav-subtree-title-color : #008FD2;
 	padding: 0;
 }
 
+/* décalage menu vers le bas */
+#portal-globalnav-wrapper #portal-globalnav>li>.has_subtree, #subsite-navigation #portal-globalnav>li>.has_subtree {
+    margin-top: 2.25rem;
+}
+
+
+#subsite-navigation > ul > li.show-nav>.has_subtree.dropdown {
+    margin-top: 2rem;
+}
+
+/* correctif navigation de gestion en mode contenu (couper copier coller) s'affiche devant le menu principal) */
+#content-core .pat-structure .navbar.ui-offset-parent {
+    z-index: 0;
+}
+
+/* affichage état privé dans le menu */
+#portal-globalnav-collapse .dropdown .nav-link.state-private, #subsite-navigation .dropdown .nav-link.state-private {
+    color: #c4183c;
+}
 
 ////// A SUPPRIMER PLUSTARD
 
@@ -299,3 +325,15 @@ $nav-subtree-title-color : #008FD2;
 }
 
  
+
+// #portal-globalnav-wrapper #portal-globalnav>li>.has_subtree, #subsite-navigation #portal-globalnav>li>.has_subtree {
+//     width: 21em;
+// }
+// #portal-globalnav-wrapper li>.has_subtree, #subsite-navigation li>.has_subtree {
+//     width: 17em;
+// }
+// .has_subtree.dropdown {
+//     box-sizing: content-box;
+// }
+
+

@@ -12,11 +12,15 @@
       }
     .breadcrumb {
       background-color: transparent;
+      .breadcrumb-item{
+        a{
+          text-decoration: none;
+        }
+      }
     }
-  
-  }
+}
 .section-home-page{
   #plone-breadcrumb{
     display: none;
   }
-  }
+}

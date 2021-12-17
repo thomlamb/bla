@@ -1,0 +1,31 @@
+#portal-footer-wrapper .smartweb-footer .container{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    .row{
+        .container{
+            padding: 3rem 0;
+        }
+    }
+}
+
+#portal-footer-wrapper {
+    background-color: #000;
+    text-align: left;
+}
+
+#smartweb-footer .section-contact:after{
+    display:none;
+}
+#smartweb-footer .section-contact {
+    background:transparent;
+    color:white;
+}
+#smartweb-footer .section-contact .body-section h2,
+#smartweb-footer .section-contact .body-section h3,
+#smartweb-footer .section-contact .body-section a {
+    color:white;
+}
+#smartweb-footer .section-contact table.table_schedule {
+    color: black;
+}
