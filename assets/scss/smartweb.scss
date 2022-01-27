@@ -27,6 +27,9 @@ $bg-primary: red;
 @import "./sm-carousel.scss";
 @import "./sm-homepage.scss";
 @import "./sm-animation.scss";
+@import "./common/com-search.scss";
+
+
 
 
 
@@ -74,7 +77,9 @@ html, body {
 }
 
 
-
+#portal-globalnav-wrapper li label, #subsite-navigation li label {
+	top: -100vh!important;
+}
 //// Notes
 
 // j'ai ajouté une div mask-menu dans le index.html du theme: bon ou pas ?

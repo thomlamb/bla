@@ -1,5 +1,5 @@
 #portal-header{
-    display: grid;
+    display: grid!important;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr !important;
     grid-template-areas: "search logo menu" "messageviewlet messageviewlet messageviewlet" "sub sub sub" "localmessageviewlet localmessageviewlet localmessageviewlet" "bread bread bread";    margin: 0 auto;
@@ -10,7 +10,7 @@
     #portal-logo{
       grid-area: logo;
       max-width: $main-logo-max-width;
-      margin: $logo-margin-y 0;
+      padding: $logo-margin-y 0;
       @media screen and (max-width:1200px) {
         justify-self: center;
       } 

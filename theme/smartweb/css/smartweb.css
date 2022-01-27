@@ -6085,7 +6085,7 @@ textarea.form-control-lg {
 .offcanvas-start {
   top: 0;
   left: 0;
-  width: 400px;
+  width: 95%;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   transform: translateX(-100%);
 }
@@ -6093,7 +6093,7 @@ textarea.form-control-lg {
 .offcanvas-end {
   top: 0;
   right: 0;
-  width: 400px;
+  width: 95%;
   border-left: 1px solid rgba(0, 0, 0, 0.2);
   transform: translateX(100%);
 }
@@ -12039,6 +12039,20 @@ figcaption {
   display: block;
 }
 
+.offcanvas-backdrop.show {
+  opacity: 0.5;
+}
+
+.offcanvas-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+
 .list-group .list-group-item {
   border-bottom: 1px solid #d8d8d8;
   position: relative;
@@ -12789,7 +12803,7 @@ a.opening_informations {
 }
 
 #portal-header {
-  display: grid;
+  display: grid !important;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr !important;
   grid-template-areas: "search logo menu" "messageviewlet messageviewlet messageviewlet" "sub sub sub" "localmessageviewlet localmessageviewlet localmessageviewlet" "bread bread bread";
@@ -12804,7 +12818,7 @@ a.opening_informations {
 #portal-header #portal-logo {
   grid-area: logo;
   max-width: 115px;
-  margin: 1.5rem 0;
+  padding: 1.5rem 0;
 }
 @media screen and (max-width: 1200px) {
   #portal-header #portal-logo {
@@ -12941,6 +12955,10 @@ a.opening_informations {
 
 #smartweb-footer .section-contact table.table_schedule {
   color: black;
+}
+
+#search-link {
+  cursor: pointer;
 }
 
 #portal-globalnav-wrapper {
@@ -13238,7 +13256,7 @@ a.opening_informations {
 
 #plone-breadcrumb {
   background-color: transparent;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   position: relative;
 }
 #plone-breadcrumb .breadcrumb {
@@ -13628,17 +13646,38 @@ div#subsite-logo img {
   margin-bottom: 3rem;
 }
 .sectionevents.event .swiper-slide {
-  margin-right: 25px !important;
+  height: auto;
+}
+.sectionevents.event .swiper-slide > a {
+  display: block;
+  height: 100%;
+  background: #fff;
 }
 .sectionevents.event .swiper-slide a {
   text-decoration: none;
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
 }
 .sectionevents.event .swiper-slide .swiper-image {
+  margin-bottom: 1rem;
+  border-radius: 15px;
   border-bottom-left-radius: 0px;
+}
+.sectionevents.event .swiper-slide .swiper_category {
+  padding: 0 0 0 1rem;
+}
+.sectionevents.event .swiper-slide .swiper_category span {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  color: #565656;
+}
+.sectionevents.event .swiper-slide .swiper_date {
+  padding: 0 0 0 1rem;
 }
 .sectionevents.event .swiper-slide .swiper_title {
   background: #fff;
-  padding: 1rem 1rem;
+  padding: 0.5rem 0 1rem 1rem;
   border-bottom-right-radius: 15px;
 }
 .sectionevents.event .swiper-slide .swiper_title h3, .sectionevents.event .swiper-slide .swiper_title .h3 {
@@ -14880,6 +14919,10 @@ html, body {
   width: 100vw;
   position: absolute;
   z-index: -1;
+}
+
+#portal-globalnav-wrapper li label, #subsite-navigation li label {
+  top: -100vh !important;
 }
 
 /*# sourceMappingURL=smartweb.css.map */
