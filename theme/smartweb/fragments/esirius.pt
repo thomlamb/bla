@@ -1,4 +1,3 @@
 <div class="esirius">
-  <h3 >Average waiting time to get a guichet meet</h3>
   <p tal:content="view/message" />
 </div>
