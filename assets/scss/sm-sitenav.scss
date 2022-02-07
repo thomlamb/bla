@@ -5,7 +5,12 @@ $nav-subtree-title-color : #008FD2;
 #portal-globalnav-wrapper{
     z-index: 2;
 }
-@media screen and (max-width:992px) {
+.navbar-nav {
+    @include media-breakpoint-up(lg) {
+	align-items: center;
+    }
+}
+@include media-breakpoint-up(lg) {
     .collapse:not(.show) {
         display: block;
     }
@@ -96,7 +101,10 @@ $nav-subtree-title-color : #008FD2;
         }
     }
     & > ul {
-        @media screen and (min-width:992px){
+        @include media-breakpoint-up(md){
+            gap: 15px;
+        }
+        @include media-breakpoint-up(xl) {
             gap: $nav-first-level-gap;
         }
         & > li{
@@ -116,10 +124,12 @@ $nav-subtree-title-color : #008FD2;
                     right: 0; 
                     width: 0;
                 }
-                &:focus,
-                &:hover{
-                    &:before{
-                        width: 100%;
+                @media (hover: hover) and (pointer: fine) {
+                    &:focus,
+                    &:hover{
+                        &:before{
+                            width: 100%;
+                        }
                     }
                 }
             }
@@ -148,6 +158,13 @@ $nav-subtree-title-color : #008FD2;
             }
         }
     }
+    & > .nav-item.has_subtree{
+        & > .nav-link{
+            @include media-breakpoint-down(xl) {
+                font-size: 15px;
+            }
+        }
+    }
     .je-suis,.en-un-clic{
         & > .nav-link{
             text-transform: none;
@@ -172,6 +189,21 @@ $nav-subtree-title-color : #008FD2;
         display: block;
     }
 }
+.navbar-expand-md .navbar-nav {
+	@include media-breakpoint-up(md) {
+        flex-direction: column;
+    }
+    @include media-breakpoint-up(lg) {
+        flex-direction: row;
+    }
+}
+.navbar-expand-md .navbar-collapse {
+        display: block !important;
+        @include media-breakpoint-up(lg) {
+            display: flex !important;
+        }
+}
+
 @media screen and (min-width:992px){
     .navbar-expand-md .navbar-toggler {
         display: none;
@@ -199,7 +231,20 @@ $nav-subtree-title-color : #008FD2;
         max-width: max-content;
     }
 }
-
+#subsite-navigation{
+    & > ul > .has_subtree.nav-item{
+        & > .nav-link{
+            display: flex;
+            align-items: center;
+            &:after{
+                content: url(../svg/drop-down-arrow.svg);
+                display: flex;
+                align-items: center;
+                padding-left: 0.4rem;
+            }
+        }
+    }
+}
 @media screen and (max-width:992px) {
     #portal-globalnav-collapse{
         #portal-globalnav > li > .nav-link{
@@ -298,13 +343,22 @@ $nav-subtree-title-color : #008FD2;
 
 /* décalage menu vers le bas */
 #portal-globalnav-wrapper #portal-globalnav>li>.has_subtree, #subsite-navigation #portal-globalnav>li>.has_subtree {
-    margin-top: 2.25rem;
+    @include media-breakpoint-up(lg) {
+        margin-top: 2.25rem;
+    }
 }
+#portal-globalnav-wrapper .navbar-nav li .has_subtree.dropdown {
+    @include media-breakpoint-down(lg) {
+        overflow: hidden;
+        overflow-y: scroll;
+    }
 
+}
 
 #subsite-navigation > ul > li.show-nav>.has_subtree.dropdown {
     margin-top: 2rem;
 }
+
 
 /* correctif navigation de gestion en mode contenu (couper copier coller) s'affiche devant le menu principal) */
 #content-core .pat-structure .navbar.ui-offset-parent {
@@ -326,17 +380,9 @@ $nav-subtree-title-color : #008FD2;
         width: 13rem;
     }
 }
-
- 
-
-// #portal-globalnav-wrapper #portal-globalnav>li>.has_subtree, #subsite-navigation #portal-globalnav>li>.has_subtree {
-//     width: 21em;
-// }
-// #portal-globalnav-wrapper li>.has_subtree, #subsite-navigation li>.has_subtree {
-//     width: 17em;
-// }
-// .has_subtree.dropdown {
-//     box-sizing: content-box;
-// }
-
-
+.nav-title{
+    padding: 0!important;
+    a{
+        color: $primary;
+    }
+}

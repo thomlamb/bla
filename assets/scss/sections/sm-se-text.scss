@@ -1,7 +1,42 @@
+.mce-content-body{
+    mark{
+        background-color: #008FD2;
+        color: #fff;
+        padding: 20px 45px 20px 26px;
+        display: block;
+        border-radius: 5px;
+        border-bottom-left-radius: 0px;
+        border: solid 4px #0079B1;
+        font-weight: 500;
+    }
+    li{
+        list-style: none;
+        display: table;
+        padding-left: 1rem;
+        position: relative;
+        margin: .25rem 0; 
+        &::before{
+            content: $list-style-custom;
+            top: -2px;
+            left: 0;
+            position: absolute;
+        }
+    }
+}
 .sectiontext{
     // @include section-padding-bottom;
     font-size: $font-size-lg;
     color:$color-content-text;
+    mark{
+        background-color: #008FD2;
+        color: #fff;
+        padding: 20px 45px 20px 26px;
+        display: block;
+        border-radius: 5px;
+        border-bottom-left-radius: 0px;
+        border: solid 4px #0079B1;
+        font-weight: 500;
+    }
     p{
         margin-bottom: 0;
         padding-bottom: 1rem;

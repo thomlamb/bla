@@ -7,8 +7,10 @@ $bg-primary: red;
 // @import "../../../plonetheme.common/scss/base.scss";
 @import "./common/com-faceted.scss";
 @import "./common/com-list-image.scss";
+@import "./sm-messviewlet.scss";
 @import "./common/com-edition.scss";
 @import "./common/com-header.scss";
+@import "./common/com-cookies.scss";
 @import "./sm-mixin.scss";
 @import "./sm-list.scss";
 @import "././sections/sm-se-text.scss";
@@ -27,7 +29,6 @@ $bg-primary: red;
 @import "./sm-carousel.scss";
 @import "./sm-homepage.scss";
 @import "./sm-animation.scss";
-@import "./common/com-search.scss";
 
 
 
@@ -45,7 +46,7 @@ ul{
 // GLOBAL 
 html, body {
 	max-width: 100%;
-	overflow-x: hidden;
+  padding-right: 0!important;
 }
 .r-content button {
 	background: transparent;

@@ -11965,6 +11965,10 @@ body .outer-wrapper #messagesviewlet .portalMessage .messagesviewlet-type, body 
   width: auto;
 }
 
+#messagesviewlet .portalMessage.info, #localmessagesviewlet .portalMessage.info {
+  background-color: #007DB8;
+}
+
 .container.header-section.hide-in-preview {
   padding: 0.5rem;
   border-radius: 7px;
@@ -12053,6 +12057,82 @@ figcaption {
   background-color: #000;
 }
 
+#gdpr-consent-banner {
+  z-index: 98;
+  padding: 50px 25px;
+  background: #fff;
+  position: fixed;
+  top: 100vh;
+  transform: translateY(-100%);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: #686868;
+  width: auto;
+  left: 0;
+}
+@media (min-width: 992px) {
+  #gdpr-consent-banner {
+    right: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+@media (min-width: 992px) {
+  #gdpr-consent-banner > span {
+    max-width: 500px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    padding-right: 30px;
+  }
+}
+@media (min-width: 992px) {
+  #gdpr-consent-banner > form {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+#gdpr-consent-banner .gdpr-actions > a {
+  background: #fff;
+  color: #000;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  border: 2px solid #000;
+  font-size: 14px;
+  margin-left: 0.6rem;
+  text-decoration: none;
+  margin-top: 2rem;
+}
+@media (min-width: 992px) {
+  #gdpr-consent-banner .gdpr-actions > a {
+    margin-top: 0;
+  }
+}
+#gdpr-consent-banner .gdpr-actions input[name=consent] {
+  background: #000;
+  color: #fff;
+  border: 2px solid transparent;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+@media (min-width: 992px) {
+  #gdpr-consent-banner .gdpr-actions input[name=consent] {
+    margin-top: 0;
+  }
+}
+#gdpr-consent-banner .gdpr-actions input[name=refuse] {
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+  margin-left: auto;
+  display: block;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
 .list-group .list-group-item {
   border-bottom: 1px solid #d8d8d8;
   position: relative;
@@ -12104,9 +12184,43 @@ body .list-group .list-group-item {
   border: none !important;
 }
 
+.mce-content-body mark, .mce-content-body .mark {
+  background-color: #008FD2;
+  color: #fff;
+  padding: 20px 45px 20px 26px;
+  display: block;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border: solid 4px #0079B1;
+  font-weight: 500;
+}
+.mce-content-body li {
+  list-style: none;
+  display: table;
+  padding-left: 1rem;
+  position: relative;
+  margin: 0.25rem 0;
+}
+.mce-content-body li::before {
+  content: url(../svg/list-style-yellow.svg);
+  top: -2px;
+  left: 0;
+  position: absolute;
+}
+
 .sectiontext {
   font-size: 1.125rem;
   color: #505050;
+}
+.sectiontext mark, .sectiontext .mark {
+  background-color: #008FD2;
+  color: #fff;
+  padding: 20px 45px 20px 26px;
+  display: block;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border: solid 4px #0079B1;
+  font-weight: 500;
 }
 .sectiontext p {
   margin-bottom: 0;
@@ -12809,9 +12923,9 @@ a.opening_informations {
   grid-template-areas: "search logo menu" "messageviewlet messageviewlet messageviewlet" "sub sub sub" "localmessageviewlet localmessageviewlet localmessageviewlet" "bread bread bread";
   margin: 0 auto;
 }
-@media screen and (min-width: 1200px) {
+@media (min-width: 992px) {
   #portal-header {
-    grid-template-columns: 115px 1fr 187px !important;
+    grid-template-columns: 115px 1fr auto !important;
     grid-template-areas: "logo menu search" "messageviewlet messageviewlet messageviewlet" "sub sub sub" "localmessageviewlet localmessageviewlet localmessageviewlet" "bread bread bread";
   }
 }
@@ -12820,7 +12934,7 @@ a.opening_informations {
   max-width: 115px;
   padding: 1.5rem 0;
 }
-@media screen and (max-width: 1200px) {
+@media (max-width: 991.98px) {
   #portal-header #portal-logo {
     justify-self: center;
   }
@@ -12835,7 +12949,7 @@ a.opening_informations {
 #portal-header #portal-globalnav-wrapper {
   grid-area: menu;
 }
-@media screen and (max-width: 1200px) {
+@media (max-width: 991.98px) {
   #portal-header #portal-globalnav-wrapper {
     justify-self: right;
   }
@@ -12846,11 +12960,14 @@ a.opening_informations {
 #portal-header #plone-breadcrumb {
   grid-area: bread;
 }
+#portal-header nav#portal-breadcrumbs {
+  grid-area: bread;
+}
 #portal-header .subsite-container {
   grid-area: sub;
   overflow-x: clip;
 }
-@media screen and (max-width: 1200px) {
+@media (max-width: 991.98px) {
   #portal-header #header-links #header-actions {
     display: none;
   }
@@ -12868,6 +12985,9 @@ a.opening_informations {
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 #portal-header #header-links #header-actions .account::after {
   content: "";
@@ -12891,6 +13011,12 @@ a.opening_informations {
 #portal-header #header-links #header-actions .account span {
   display: flex;
   gap: 5px;
+  align-items: center;
+}
+@media (max-width: 1199.98px) {
+  #portal-header #header-links #header-actions .account span {
+    font-size: 14px;
+  }
 }
 #portal-header #header-links #header-actions .account span:before {
   content: url(../svg/mascotte.svg);
@@ -12965,7 +13091,13 @@ a.opening_informations {
   z-index: 2;
 }
 
-@media screen and (max-width: 992px) {
+@media (min-width: 992px) {
+  .navbar-nav {
+    align-items: center;
+  }
+}
+
+@media (min-width: 992px) {
   .collapse:not(.show) {
     display: block;
   }
@@ -13039,7 +13171,12 @@ a.opening_informations {
   padding: 0 !important;
   width: auto !important;
 }
-@media screen and (min-width: 992px) {
+@media (min-width: 768px) {
+  #portal-globalnav-collapse > ul, #subsite-navigation > ul {
+    gap: 15px;
+  }
+}
+@media (min-width: 1200px) {
   #portal-globalnav-collapse > ul, #subsite-navigation > ul {
     gap: 30px;
   }
@@ -13059,8 +13196,10 @@ a.opening_informations {
   right: 0;
   width: 0;
 }
-#portal-globalnav-collapse > ul > li > a:focus:before, #portal-globalnav-collapse > ul > li > a:hover:before, #subsite-navigation > ul > li > a:focus:before, #subsite-navigation > ul > li > a:hover:before {
-  width: 100%;
+@media (hover: hover) and (pointer: fine) {
+  #portal-globalnav-collapse > ul > li > a:focus:before, #portal-globalnav-collapse > ul > li > a:hover:before, #subsite-navigation > ul > li > a:focus:before, #subsite-navigation > ul > li > a:hover:before {
+    width: 100%;
+  }
 }
 
 .navbar {
@@ -13085,6 +13224,11 @@ a.opening_informations {
   align-items: center;
   padding-left: 0.4rem;
 }
+@media (max-width: 1199.98px) {
+  #portal-globalnav > .nav-item.has_subtree > .nav-link {
+    font-size: 15px;
+  }
+}
 #portal-globalnav .je-suis > .nav-link, #portal-globalnav .en-un-clic > .nav-link {
   text-transform: none;
   color: #008FD2;
@@ -13108,6 +13252,26 @@ a.opening_informations {
     display: block;
   }
 }
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-nav {
+    flex-direction: column;
+  }
+}
+@media (min-width: 992px) {
+  .navbar-expand-md .navbar-nav {
+    flex-direction: row;
+  }
+}
+
+.navbar-expand-md .navbar-collapse {
+  display: block !important;
+}
+@media (min-width: 992px) {
+  .navbar-expand-md .navbar-collapse {
+    display: flex !important;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .navbar-expand-md .navbar-toggler {
     display: none;
@@ -13141,6 +13305,17 @@ a.opening_informations {
     max-width: max-content;
   }
 }
+#subsite-navigation > ul > .has_subtree.nav-item > .nav-link {
+  display: flex;
+  align-items: center;
+}
+#subsite-navigation > ul > .has_subtree.nav-item > .nav-link:after {
+  content: url(../svg/drop-down-arrow.svg);
+  display: flex;
+  align-items: center;
+  padding-left: 0.4rem;
+}
+
 @media screen and (max-width: 992px) {
   #portal-globalnav-collapse #portal-globalnav > li > .nav-link {
     border-bottom: 1px solid #ddd;
@@ -13229,8 +13404,17 @@ a.opening_informations {
 }
 
 /* décalage menu vers le bas */
-#portal-globalnav-wrapper #portal-globalnav > li > .has_subtree, #subsite-navigation #portal-globalnav > li > .has_subtree {
-  margin-top: 2.25rem;
+@media (min-width: 992px) {
+  #portal-globalnav-wrapper #portal-globalnav > li > .has_subtree, #subsite-navigation #portal-globalnav > li > .has_subtree {
+    margin-top: 2.25rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  #portal-globalnav-wrapper .navbar-nav li .has_subtree.dropdown {
+    overflow: hidden;
+    overflow-y: scroll;
+  }
 }
 
 #subsite-navigation > ul > li.show-nav > .has_subtree.dropdown {
@@ -13252,6 +13436,13 @@ a.opening_informations {
 }
 #portal-searchbox [type=text] {
   width: 13rem;
+}
+
+.nav-title {
+  padding: 0 !important;
+}
+.nav-title a {
+  color: #008FD2;
 }
 
 #plone-breadcrumb {
@@ -14380,7 +14571,7 @@ div#subsite-logo img {
 .bla-container .letter.a {
   position: relative;
   background: url(../svg/a-img.jpg) no-repeat center/cover;
-  background-position: 1% center;
+  background-position: 7% center;
   -webkit-mask-image: url(../svg/a-svg.svg);
   mask-image: url(../svg/a-svg.svg);
   width: 39.3555811277%;
@@ -14888,7 +15079,7 @@ ul {
 
 html, body {
   max-width: 100%;
-  overflow-x: hidden;
+  padding-right: 0 !important;
 }
 
 .r-content button {

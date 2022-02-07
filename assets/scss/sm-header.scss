@@ -3,7 +3,7 @@
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr !important;
     grid-template-areas: "search logo menu" "messageviewlet messageviewlet messageviewlet" "sub sub sub" "localmessageviewlet localmessageviewlet localmessageviewlet" "bread bread bread";    margin: 0 auto;
-    @media screen and (min-width:1200px) {
+    @include media-breakpoint-up(lg) { 
       grid-template-columns: $main-logo-max-width 1fr $main-search-max-width!important;
       grid-template-areas: "logo menu search" "messageviewlet messageviewlet messageviewlet"  "sub sub sub" "localmessageviewlet localmessageviewlet localmessageviewlet" "bread bread bread";
     }
@@ -11,7 +11,7 @@
       grid-area: logo;
       max-width: $main-logo-max-width;
       padding: $logo-margin-y 0;
-      @media screen and (max-width:1200px) {
+      @include media-breakpoint-down(lg) {
         justify-self: center;
       } 
       img{
@@ -24,7 +24,7 @@
     }
     #portal-globalnav-wrapper{
       grid-area: menu;
-      @media screen and (max-width:1200px){
+      @include media-breakpoint-down(lg) {
         justify-self: right;
         .container{
           padding: 0;
@@ -34,13 +34,16 @@
     #plone-breadcrumb{
       grid-area: bread;
     }
+    nav#portal-breadcrumbs {
+      grid-area: bread;
+    }
     .subsite-container{
       grid-area: sub;
       overflow-x: clip;
     }
     #header-links{
       #header-actions{
-        @media screen and (max-width:1200px) {
+        @include media-breakpoint-down(lg) {
           display: none;
         } 
         .account{
@@ -56,6 +59,7 @@
           position: relative;
           overflow: hidden;
           transition: all .4s ease;
+          width: max-content;
           &::after{
             content: "";
             background: $primary;
@@ -78,6 +82,10 @@
           span{
             display: flex;
             gap: 5px;
+            align-items: center;
+            @include media-breakpoint-down(xl) {
+              font-size: 14px;
+            }
             &:before{
               content: url(../svg/mascotte.svg);
               display: flex;
