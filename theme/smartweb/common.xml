@@ -45,7 +45,7 @@
   <replace css:theme-children="#portal-column-content" css:content-children="#portal-column-content"></replace>
 
   <replace css:content="#fragment_esirius">
-      <xsl:apply-templates select="document('@@theme-fragment/esirius', $diazo-base-document)" mode="raw"/>
+      <xsl:apply-templates select="document('@@theme-fragment/esirius_js', $diazo-base-document)" mode="raw"/>
   </replace>
 
   <!-- Alert message -->
