@@ -28,13 +28,12 @@
     font-size: $font-size-lg;
     color:$color-content-text;
     mark{
-        background-color: #008FD2;
-        color: #fff;
+        background-color: #F3F3F3;
+        color: #5c5c5c;
         padding: 20px 45px 20px 26px;
-        display: block;
-        border-radius: 5px;
-        border-bottom-left-radius: 0px;
-        border: solid 4px #0079B1;
+        border-radius: 10px;
+        border-bottom-left-radius: 0;
+        border: solid 2px #FFB81C;
         font-weight: 500;
     }
     p{
@@ -76,10 +75,13 @@
             }
             &.figure-left{
                 figure{
-                    float: left;
-                    margin-right: 2.5rem;
                     display: block;
-                    max-width: 45%;
+                    max-width: 100%;
+                    @include media-breakpoint-up(md){
+                        float: left;
+                        margin-right: 2.5rem;
+                        max-width: 45%;
+                    }
                     img{
                         width: 100%;
                     }
@@ -87,10 +89,13 @@
             }
             &.figure-right{
                 figure{
-                    float: right;
-                    margin-left: 2.5rem;
                     display: block;
-                    max-width: 45%;
+                    max-width: 100%;
+                    @include media-breakpoint-up(md){
+                        float: right;
+                        margin-left: 2.5rem;
+                        max-width: 45%;
+                    }
                     img{
                         width: 100%;
                     }
@@ -137,7 +142,10 @@ div:not(.sectiontext){
     & + .sectiontext{
         @include section-padding-top;
         h2{
-            margin-top: 50px!important;
+            margin-top: 10px!important;
+            @include media-breakpoint-up(md){
+                margin-top: 50px!important;
+            }
         }
         .figure-top{
            figure{
@@ -196,48 +204,14 @@ strong {
     }
 }
 
+// A supp quand la class container de la section de text est retiré du buildout
+.container.section-container.section-text {
+    padding-left: 0;
+    padding-right: 0;
+}
 
 
 
 
 
 
-
-
-
-// #content-core{
-//     .sectiontext{
-        
-//     }
-// }
-// .section-text{
-//     @include section-padding;
-//     .body-section{
-//         display: flex;
-//         &.figure-left{
-//             figure{
-//                 margin-right: 2rem;
-//             }
-//         }
-//         &.figure-right{
-//             figure{
-//                 margin-left: 2rem;
-//             }
-//             flex-direction: row-reverse;
-//         }
-//         figure{
-//             display: table;
-//             align-self: flex-start;
-//             img{
-//                 display: block;
-//             }
-//             figcaption{
-//                 display: table-caption;
-//                 caption-side: bottom;
-//             }
-//         }
-//         .text{
-//             max-width: 800px;
-//         }
-//     }
-// }

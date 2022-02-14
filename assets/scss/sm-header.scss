@@ -11,6 +11,7 @@
       grid-area: logo;
       max-width: $main-logo-max-width;
       padding: $logo-margin-y 0;
+      width: 100%;
       @include media-breakpoint-down(lg) {
         justify-self: center;
       } 

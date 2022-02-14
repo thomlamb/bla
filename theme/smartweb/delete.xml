@@ -37,7 +37,13 @@
 
   <!-- Content header -->
   <replace css:theme="#portal-top" css:content-children="#portal-top" />
-  
+
+  <!-- move title (h1) into portal-header -->
+  <after css:content-children="#portal-header">
+      <xsl:copy-of select="//h1" />
+  </after>
+  <drop css:content="h1" />
+
   <!-- full-width breadcrumb -->
   <replace css:theme="#above-content" css:content="#viewlet-above-content" />
 
@@ -62,10 +68,8 @@
 
   <!-- Footer -->
   
-  <before
-        css:theme-children="#portal-footer"
-        css:content=".smartweb_footer"
-        />
+
+
   <!-- Replace footer information with Plone version. -->
   <replace
       css:theme-children="#portal-footer .copyright > div"
@@ -80,12 +84,12 @@
       />
   <drop css:theme="#portal-footer .colophon" css:if-not-content="#portal-footer-wrapper #portal-colophon" />
 
-  <!-- Replace site-actions with Plone version. --> <!--  comment  -->
-  <replace
+  <!-- Replace site-actions with Plone version. -->
+  <!-- <replace
       css:theme-children="#portal-footer .site-actions > div"
       css:content="#portal-footer-wrapper .actions-site_actions"
       />
-  <drop css:theme="#portal-footer .site-actions" css:if-not-content="#portal-footer-wrapper .actions-site_actions" />
+  <drop css:theme="#portal-footer .site-actions" css:if-not-content="#portal-footer-wrapper .actions-site_actions" /> -->
 
   <!-- Move all other footer portlets into doormat area. -->
   <replace css:theme-children="#portal-footer .doormat">

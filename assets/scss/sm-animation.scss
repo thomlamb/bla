@@ -1,7 +1,10 @@
 .slogan-container{
   margin: 0 auto;
   display: flex;
-  padding: 3rem 0;
+  padding: 0 0;
+  @include media-breakpoint-up(lg){
+    padding: 3rem 0;
+  }
   position: relative;
   &:after {
     content: "";
@@ -282,15 +285,15 @@
 
   }
   70%{
-    background-position: 10% center;
+    background-position: 17% center;
   }
   90%{
     opacity: 1;
-    background-position: 1% center;
+    background-position: 7% center;
   }
   100%{
     opacity: 1;
-    background-position: 1% center;
+    background-position: 7% center;
   }
 }
 @keyframes vid-container {

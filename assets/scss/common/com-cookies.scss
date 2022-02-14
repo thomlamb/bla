@@ -44,6 +44,11 @@
             @include media-breakpoint-up(lg) {
                 margin-top: 0;
             }
+            @include media-breakpoint-down(sm) {
+                font-size: 13px;
+                padding: 9px 10px;
+                display: inline-block;
+            }
         }
         input[name="consent"] {
             background: #000;
@@ -56,6 +61,10 @@
             margin-top: 2rem;
             @include media-breakpoint-up(lg) {
                 margin-top: 0;
+            }
+            @include media-breakpoint-down(sm) {
+                font-size: 13px;
+                padding: 9px 10px;
             }
         }
         input[name="refuse"] {

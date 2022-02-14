@@ -1,6 +1,6 @@
 //*// BREADCRUMBS //*//
 
-#plone-breadcrumb {
+#portal-breadcrumbs {
     background-color: $breadcrumb-bg;
     margin-bottom: 0;
     position: relative;
@@ -10,11 +10,26 @@
           background: $breadcrumb-bg;
         }
       }
+    .container{
+      padding: 0;
+    }
     .breadcrumb {
       background-color: transparent;
       .breadcrumb-item{
+        & +.breadcrumb-item {
+          padding-left: 0;
+        }
         a{
           text-decoration: none;
+        }
+        &:before {
+          float: right;
+          content: ">";
+          padding-right: 0.25rem;
+          padding-left: 0.25rem;
+        }
+        &:last-child:before {
+          content: "";
         }
       }
     }
@@ -24,3 +39,8 @@
     display: none;
   }
 }
+// cacher le breadcrumb à la racine du site
+.section-home-page-bla nav#portal-breadcrumbs,.portaltype-imio-smartweb-portalpage #portal-breadcrumbs {
+  display: none;
+}
+//---//

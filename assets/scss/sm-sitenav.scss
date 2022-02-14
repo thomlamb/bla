@@ -34,7 +34,9 @@ $nav-subtree-title-color : #008FD2;
 	visibility: visible;
 	transition: opacity .2s ease,visibility 0s;
 }
-
+#subsite-navigation > ul li > .has_subtree.dropdown .has_subtree.dropdown {
+	bottom: 0;
+}
 #portal-globalnav-collapse, #subsite-navigation{
     .index_html {
         display: none;
@@ -232,6 +234,12 @@ $nav-subtree-title-color : #008FD2;
     }
 }
 #subsite-navigation{
+    & > ul{
+        white-space: inherit;
+        & > li > a{
+            white-space: nowrap;
+        }
+    }
     & > ul > .has_subtree.nav-item{
         & > .nav-link{
             display: flex;
@@ -386,3 +394,34 @@ $nav-subtree-title-color : #008FD2;
         color: $primary;
     }
 }
+
+#subsite-navigation {
+    & > ul {
+        gap: 15px;
+    }
+}
+
+#subsite-navigation ul:first-child {
+	overflow-y: hidden;
+}
+#subsite-navigation > ul li > .has_subtree.dropdown {
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+#subsite-navigation > ul li > .has_subtree.dropdown .has_subtree.dropdown {
+    @include media-breakpoint-down(lg){
+	    box-shadow: none!important;
+    }
+}
+
+#subsite-navigation li .has_subtree.dropdown {
+    @include media-breakpoint-down(lg){
+        right: inherit;
+        left: 0 !important;
+    }
+}
+
+.prev-nav{
+    @include media-breakpoint-down(lg){
+        display: block!important;
+    }
+  }

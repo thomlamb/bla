@@ -18,6 +18,8 @@ $bg-primary: red;
 @import "././sections/sm-se-linked-content.scss";
 @import "././sections/sm-se-file.scss";
 @import "././sections/sm-se-contact.scss";
+@import "././sections/sm-se-plan.scss";
+@import "././sections/sm-se-gallery.scss";
 @import "./sm-header.scss";
 @import "./sm-footer.scss";
 @import "./sm-sitenav.scss";
@@ -29,8 +31,11 @@ $bg-primary: red;
 @import "./sm-carousel.scss";
 @import "./sm-homepage.scss";
 @import "./sm-animation.scss";
-
-
+@import "./trucaverif.scss";
+@import "./home/a-la-une.scss";
+@import "./home/actu.scss";
+@import "./home/event.scss";
+@import "./home/un-clic.scss";
 
 
 

@@ -7,10 +7,10 @@
         }
     }
     @if $enable-full-width-section-link{
-        &:after{
-            @include full-width;
-            background:$section-link-background-color;
-        }
+        // &:after{
+        //     @include full-width;
+        //     background:$section-link-background-color;
+        // }
     }
     background: $section-link-background-color;
     position: relative;

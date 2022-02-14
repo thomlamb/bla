@@ -168,62 +168,7 @@ legend {
 }
 
 
-// Message Alerte
 
-#messagesviewlet{
-    grid-area: messageviewlet;
-    float: none;
-    padding: 1rem 0;
-}
-#localmessagesviewlet{
-    grid-area: localmessageviewlet;
-    float: none;
-    padding: 1rem 0;
-}
-
-#messagesviewlet .portalMessage, #localmessagesviewlet .portalMessage {
-    max-width: 1320px;
-}
-
-#messagesviewlet .portalMessage p:first-of-type, #localmessagesviewlet .portalMessage p:first-of-type {
-    display: inline;
-}
-
-#messagesviewlet .portalMessage .messagesviewlet-type, #localmessagesviewlet .portalMessage .messagesviewlet-type {
-    color: white;
-    padding: 0;
-    margin: 0;
-    font-weight: bold;
-}
-
-body .outer-wrapper #messagesviewlet .portalMessage .messagesviewlet-type, body .outer-wrapper #localmessagesviewlet .portalMessage .messagesviewlet-type {
-    background: transparent;
-}
-
-#messagesviewlet > div, #localmessagesviewlet > div {
-    max-width: 1320px;
-    margin: 0 auto;
-    color: white;
-    padding: 0.5rem 0.75rem;
-    border-radius: 5px;
-    margin-bottom:0.5rem;
-}
-
-#messagesviewlet .portalMessage .messagesviewlet-type::after,
-
-#localmessagesviewlet .portalMessage .messagesviewlet-type::after {
-    content: '|';
-    margin-left: 0.25rem;
-}
-.portalMessage.info{
-    background: #27789c;
-}
-.portalMessage.warning{
-    background: #c06d01;
-}
-.portalMessage.error{
-    background: #ae2609;
-}
 ///// correctifs 
 
 .ui-widget-header > div.ui-icon {
