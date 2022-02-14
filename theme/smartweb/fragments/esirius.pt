@@ -1,10 +1,19 @@
-<tal:def tal:define="msg view/message">
-  <tal:if tal:condition="python:not msg == 'closed'">
-    <div class="fragment_esirius">
-      <p tal:replace="structure msg" />
+<style>
+   .fragment_esirius.closed { border-color: #cccccc; }
+   .fragment_esirius.level0 { border-color: #c3f000; }
+   .fragment_esirius.level1 { border-color: #f0e100; }
+   .fragment_esirius.level2 { border-color: $orange; }
+   .fragment_esirius.level3 { border-color: #ff5e00; }
+   .fragment_esirius.level4 { border-color: #ff1800; }
+</style>
+
+<tal:def tal:define="msg view/message" tal:condition="msg">
+  <tal:if tal:condition="not:msg/closed">
+    <div tal:attributes="class string:fragment_esirius ${msg/level}">
+      <p tal:replace="structure msg/time_str" />
     </div>
   </tal:if>
-  <tal:else tal:condition="python:msg == 'closed'">
+  <tal:else tal:condition="msg/closed">
     <div class="fragment_esirius closed">
       <span class="closed">Fermé</span>
     </div>

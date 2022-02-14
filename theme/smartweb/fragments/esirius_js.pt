@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     };
     xmlhttp.open("GET", "@@theme-fragment/esirius", true);
+    xmlhttp.setRequestHeader("Cache-Control", "no-cache, no-store, max-age=0");
     xmlhttp.send();
 });
 </script>
