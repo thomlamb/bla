@@ -2,7 +2,7 @@
    .fragment_esirius.closed { border-color: #cccccc; }
    .fragment_esirius.level0 { border-color: #c3f000; }
    .fragment_esirius.level1 { border-color: #f0e100; }
-   .fragment_esirius.level2 { border-color: $orange; }
+   .fragment_esirius.level2 { border-color: #f9b300; }
    .fragment_esirius.level3 { border-color: #ff5e00; }
    .fragment_esirius.level4 { border-color: #ff1800; }
 </style>
