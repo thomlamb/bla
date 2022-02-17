@@ -177,5 +177,12 @@
         a{
          color: #000 !important;
         }
+        &:hover,&:focus{
+            background: rgba(255, 255, 255, 0.678)!important;
+        }
+    }
+    .swiper-pagination-bullet{
+        background: #fff;
+        opacity: 1;
     }
 }

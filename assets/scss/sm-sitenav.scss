@@ -153,10 +153,15 @@ $nav-subtree-title-color : #008FD2;
             display: flex;
             align-items: center;
             &:after{
-                content: url(../svg/drop-down-arrow.svg);
-                display: flex;
-                align-items: center;
-                padding-left: 0.4rem;
+                content:"";
+                width: 9px;
+                height: 6px;
+                display: block;
+                background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  width="8.444" height="5.2"><path fill="black" d="M.247.254a.831.831 0 0 1 1.2 0l2.78 2.854L7.011.254A.831.831 0 0 1 8.2.264a.882.882 0 0 1 .01 1.215L4.825 4.946a.835.835 0 0 1-.6.254 1.529 1.529 0 0 1-.6-.254L.247 1.479a.882.882 0 0 1 0-1.226Z"/></svg>');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-left: 0.4rem;
             }
         }
     }
@@ -179,6 +184,13 @@ $nav-subtree-title-color : #008FD2;
         }
     }
   }
+
+  .activated #portal-globalnav > .nav-item.has_subtree:not(.je-suis):not(.en-un-clic) > .nav-link::after {
+    background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  width="8.444" height="5.2"><path fill="white" d="M.247.254a.831.831 0 0 1 1.2 0l2.78 2.854L7.011.254A.831.831 0 0 1 8.2.264a.882.882 0 0 1 .01 1.215L4.825 4.946a.835.835 0 0 1-.6.254 1.529 1.529 0 0 1-.6-.254L.247 1.479a.882.882 0 0 1 0-1.226Z"/></svg>');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
     // nav-mobile
 .navbar-toggler{
     border: 0px!important;
@@ -214,9 +226,10 @@ $nav-subtree-title-color : #008FD2;
         height: 800px;
         max-height: 85vh;
         min-height: 350px;
+        display: flex;
+        flex-direction: column;
         & > ul {
             overflow-y: auto;
-            max-height: calc(100% - 61px);
         }
     }
     #portal-header{
@@ -423,5 +436,8 @@ $nav-subtree-title-color : #008FD2;
 .prev-nav{
     @include media-breakpoint-down(lg){
         display: block!important;
+    }
+    @include media-breakpoint-up(lg){
+        display: none!important;
     }
   }
